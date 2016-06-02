@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+                  http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
+                  http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
+
+	<!-- <mvc:annotation-driven /> <context:component-scan base-package="com.whereistango.web.controller" 
+		/> <context:component-scan base-package="com.whereistango.web.service"/> 
+		<context:component-scan base-package="com.whereistango.web.validator"/> <context:component-scan 
+		base-package="com.whereistango.db.dao"/> <context:component-scan base-package="com.whereistango.db.mapper"/> 
+		<context:annotation-config /> -->
+	<tx:annotation-driven />
+	<mvc:annotation-driven/>
+	<!-- Scan the JavaConfig -->
+	<context:component-scan base-package="com.whereistango.web" />
+	<context:annotation-config />
+	<bean id="savedRequestAwareAuthenticationSuccessHandler"
+		class="org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler">
+		<property name="targetUrlParameter" value="targetUrl" />
+	</bean>
+	<!-- <jee:jndi-lookup id="dataSource" jndi-name="jdbc/WIT_DS" /> <bean id="sqlSessionFactory" 
+		class="org.mybatis.spring.SqlSessionFactoryBean"> <property name="dataSource" 
+		ref="dataSource" /> <property name="typeAliasesPackage" value="com.whereistango.db.dao" 
+		/> </bean> <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate"> 
+		<constructor-arg index="0" ref="sqlSessionFactory" /> </bean> <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer"> 
+		<property name="basePackage" value="com.whereistango.db.mapper" /> </bean> 
+		<tx:annotation-driven transaction-manager="transactionManager" /> <bean id="transactionManager" 
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager"> 
+		<property name="dataSource" ref="dataSource" /> </bean> -->
+</beans>
