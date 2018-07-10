@@ -4,7 +4,7 @@
 	<groupId>com.whereistango</groupId>
 	<artifactId>wit-web-temp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>WIT_WEB_TMP</name>
+	<name>wit-web-temp</name>
 	<packaging>war</packaging>
 	<description>whereistango.com comming soon front-end</description>
 
@@ -140,7 +140,6 @@
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
-					<skipTests>true</skipTests>
 				</configuration>
 			</plugin>
 			<plugin>

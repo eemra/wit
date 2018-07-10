@@ -4,7 +4,7 @@
 	<groupId>com.whereistango</groupId>
 	<artifactId>wit-common</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>WIT_WEB</name>
+	<name>wit-common</name>
 	<description>whereistango.com common package</description>
 	<dependencies>
 
